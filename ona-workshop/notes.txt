@@ -1,0 +1,9 @@
+https://github.com/ForJournalism/fj-apis/wiki/APIS
+For each API write a separate node script to do the API call, process json, and
+print out a list of urls
+
+example: node twitter.js > twitter_urls.txt
+
+the app.js can read in the file to get the URLs
+
+
