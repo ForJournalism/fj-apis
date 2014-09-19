@@ -9,7 +9,6 @@ In this workshop you will learn how to source content from APIs and render the m
 You will make queries to the following APIs to source content. Sever calls will be made with node and saved to flat files.  
 
 * Youtube
-  * Categories - https://developers.google.com/youtube/v3/docs/videoCategories/list
   * Search - https://developers.google.com/youtube/v3/docs/search/list
 * Vine
   * Popular - https://github.com/starlock/vino/wiki/API-Reference#get-popular
