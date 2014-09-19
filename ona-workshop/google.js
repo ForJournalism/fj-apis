@@ -1,7 +1,8 @@
 /**
  * Helps us generate an access token for Google OAUTH2.0
  * Ref: https://github.com/google/google-api-nodejs-client
- * This file is used for manual creation of OAUTH AccessToken.
+ *
+ * Note: This file is used for manual creation of OAUTH AccessToken.
 **/
 var google = require('googleapis'),
   config = require('./config.js');
