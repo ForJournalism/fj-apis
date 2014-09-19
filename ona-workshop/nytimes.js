@@ -1,5 +1,8 @@
+/*
+ * NYTimes API
+ *
+ */
 var request = require('request'),
-  qs = require('querystring'),
   config = require('./config.js');
 
 /*

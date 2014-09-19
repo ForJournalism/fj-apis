@@ -1,3 +1,7 @@
+/*
+ * Youtube Search API
+ *
+ */
 var google = require('googleapis'),
   config = require('./config.js');
 

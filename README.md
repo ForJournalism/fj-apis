@@ -20,7 +20,7 @@ You will make queries to the following APIs to source content. Sever calls will 
   * Trending Topics by Geo - https://dev.twitter.com/docs/api/1.1/get/trends/place  
 * Soundcloud
   * Search - https://developers.soundcloud.com/docs/api/guide#search
-  * Track Favorites - https://developers.soundcloud.com/docs/api/reference#tracks
+  * Tracks - https://developers.soundcloud.com/docs/api/reference#tracks
 * Reddit - Go to subreddit url and append.json
   * Subreddit - http://www.reddit.com/r/videos.json
 * RSS
