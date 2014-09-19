@@ -9,6 +9,9 @@ exports.google={clientId:'947404691893-1t17e89b714idjvokt1mbqul88qtssnu.apps.goo
   accessToken : 'ya29.hAC1TacIj7owetkPljgBE-NYK1X_p6v2HIvbvonEzVZei6AqU3qVj2x6',
   accessTokenSecret:''};
 
-exports.nytimes={searchKey:'',
-  popularKey : ''};
+exports.nytimes={searchKey:'c3a851d61a8e64298cb88a6e272a4c98:4:69828161',
+  popularKey : '907bfb0c1c5dedb75c02e3e8a15d834f:16:69828161'};
 
+exports.soundcloud={clientId:'84e56e530a7f401773b70bc472e56578',
+  clientSecret:'8d3eb56f80fca86620259564af5cfd7e',
+};
