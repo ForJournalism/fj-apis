@@ -12,7 +12,7 @@ var request = require('request'),
 var search = function(query, cb) {
 
     request.get({'url': 'http://api.nytimes.com/svc/search/v2/articlesearch.json',
-                 qs: {'q': query, 'api-key': config.nytimes.searchKey}, json:true},
+                 'qs': {'q': query, 'api-key': config.nytimes.searchKey}, json:true},
       
       function (err, response, articles) {
       if (!err && response.statusCode == 200) {
@@ -45,7 +45,7 @@ var getPopular = function(category, section, days, cb) {
     url = url.replace('%s', section);
     url = url.replace('%s', days);
     request.get({'url': url,
-                'qs': {'api-key': config.nytimes.popularKey}, json:true},
+                 'qs': {'api-key': config.nytimes.popularKey}, json:true},
       
       function (err, response, articles) {
       if (!err && response.statusCode == 200) {
@@ -54,7 +54,7 @@ var getPopular = function(category, section, days, cb) {
         });
       }
       else {
-        console.log('nytimes.search Error: ' + err);
+        console.log('nytimes.getPopular Error: ' + err);
       }
       });
 };
