@@ -15,3 +15,8 @@ exports.nytimes={searchKey:'c3a851d61a8e64298cb88a6e272a4c98:4:69828161',
 exports.soundcloud={clientId:'84e56e530a7f401773b70bc472e56578',
   clientSecret:'8d3eb56f80fca86620259564af5cfd7e',
 };
+
+exports.instagram = {clientId: '14ad13eec23549fb8a0fbc8a916aef13',
+    clientSecret: '1cfc00e1e80d42a0b8052b86b9396f3c'};
+
+exports.vine = {email: 'sharkcgibson@gmail.com', password: 'embedly1'}

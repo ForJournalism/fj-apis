@@ -29,6 +29,7 @@ var youtube = google.youtube('v3');
  * @param  {int} maxResults - 0 to 50 results, Default: 5
  * @param {function} cb - callback to print out URLS.
  */
+
 var search = function(query, order, maxResults, cb) {
   var videos = youtube.search.list({'part': 'id', 'q': query, 'order': order}, function(err, videos) {
   if (err) {
@@ -43,5 +44,5 @@ var search = function(query, order, maxResults, cb) {
 };
 
 /** Run this ish **/
-//search('cats', 'date', 5, console.log);
+search('cats', 'date', 5, console.log);
 

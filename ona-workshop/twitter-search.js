@@ -11,20 +11,21 @@ var T = new Twit({
     access_token_secret: config.twitter.accessTokenSecret
 })
 
-
 /*
- * look over specific users
- * creatorsproject
- * embedly
- * niemanlab
- * whichlight
+ * Search on Twitter.
+ *
+ * @param  {string} query - search query
+ * @param  {string} type - the type of results: mixed, recent, popular
+ * @param {function} cb - callback to print out URLS.
+ *
+ * https://dev.twitter.com/rest/reference/get/search/tweets
  */
 
 
-var getUrlsFromScreenName = function(user, cb){
-  T.get('statuses/user_timeline', {screen_name: user, count:5},function(err, data, response) {
-    //iterate through response, look in entities for URL
-    data.forEach(function(d){
+
+var searchTweets= function(query, type, cb){
+  T.get('search/tweets', { q: query, count: 20, result_type: type}, function(err, reply) {
+    reply.statuses.forEach(function(d){
       if(d.entities.urls.length >0){
         var urls = d.entities.urls;
         urls.forEach(function(url){
@@ -32,14 +33,9 @@ var getUrlsFromScreenName = function(user, cb){
         });
       }
     });
-  })
+  });
 }
 
-users = ['niemanlab', 'creatorsproject'];
+/** run this **/
+searchTweets("#funny", 'popular', console.log);
 
-users.forEach(function(u){
-  getUrlsFromScreenName(u, console.log);
-});
-
-
-//search
