@@ -39,7 +39,8 @@ if (code == null) {
 oauth2Client.getToken(code, function(err, tokens, body) {
   // Now tokens contains an access_token and an optional refresh_token. Save them.
   if(!err) {
-    console.log("Update access or refresh tokens: " + tokens);
+
+    console.log("Update access token in config.js: " + tokens.access_token);
     oauth2Client.setCredentials(tokens);
   }
   else{
