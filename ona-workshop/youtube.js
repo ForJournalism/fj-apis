@@ -21,27 +21,30 @@ oauth2Client.setCredentials({
 /** Youtube V3 API Access **/
 var youtube = google.youtube('v3');
 
-/*
- * Search for Youtube video urls.
- *
- * @param  {string} query - search query allows boolean OR(|) and NOT(|)
- * @param  {string} order - order by parameter acceptable values: date, rating, relevance (default), title, videoCount, viewCount.
- * @param  {int} maxResults - 0 to 50 results, Default: 5
- * @param {function} cb - callback to print out URLS.
- */
-var search = function(query, order, maxResults, cb) {
-  var videos = youtube.search.list({'part': 'id', 'q': query, 'order': order}, function(err, videos) {
-  if (err) {
-    console.log('youtube.search.list Error: ' + err.message);
-  }
-  else {
-    videos.items.forEach(function(entry) {
-    cb('http://www.youtube.com/watch?v=' + entry.id.videoId);
+module.exports = {
+
+  /*
+   * Search for Youtube video urls.
+   *
+   * @param  {string} query - search query allows boolean OR(|) and NOT(|)
+   * @param  {string} order - order by parameter acceptable values: date, rating, relevance (default), title, videoCount, viewCount.
+   * @param  {int} maxResults - 0 to 50 results, Default: 5
+   * @param {function} cb - callback to print out URLS.
+   */
+  search : function(query, order, maxResults, cb) {
+    var videos = youtube.search.list({'part': 'id', 'q': query, 'order': order}, function(err, videos) {
+    if (err) {
+      console.log('youtube.search.list Error: ' + err.message);
+    }
+    else {
+      videos.items.forEach(function(entry) {
+      cb('http://www.youtube.com/watch?v=' + entry.id.videoId);
+      });
+    }
     });
   }
-  });
-};
+}
 
 /** Run this ish **/
-//search('cats', 'date', 5, console.log);
+//module.exports.search('cats', 'date', 5, console.log);
 
