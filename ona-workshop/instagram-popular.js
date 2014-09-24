@@ -8,24 +8,26 @@ var ig = require('instagram-node').instagram(),
 ig.use({ client_id: config.instagram.clientId ,
              client_secret: config.instagram.clientSecret });
 
-/*
- * Popular Images on Instagram
- *
- * @param  {float} lat - latitude of location
- * @param {float} lon cb - longitude of location
- * @param {funtion} to print out URLS.
- *
- * http://instagram.com/developer/endpoints/media/
- *
- */
+module.exports = {
 
+    /*
+     * Popular Images on Instagram
+     *
+     * @param  {float} lat - latitude of location
+     * @param {float} lon cb - longitude of location
+     * @param {funtion} to print out URLS.
+     *
+     * http://instagram.com/developer/endpoints/media/
+     *
+     */
 
-var getPopular = function(cb){
-  ig.media_popular(function(err, medias, remaining, limit) {
-    medias.forEach(function(m){
-      cb(m.link);
-    });
-  });
+    getPopular : function(cb){
+      ig.media_popular(function(err, medias, remaining, limit) {
+        medias.forEach(function(m){
+          cb(m.link);
+        });
+      });
+    }
 }
 
-getPopular(console.log);
+module.exports.getPopular(console.log);
