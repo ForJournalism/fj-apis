@@ -41,29 +41,29 @@ module.exports = {
    * @param {function} cb - callback to print out URLS.
    */
   getPopular : function(category, section, days, cb) {
-  url = 'http://api.nytimes.com/svc/mostpopular/v2/%s/%s/%s.json';
-  url = url.replace('%s', category);
-  url = url.replace('%s', section);
-  url = url.replace('%s', days);
-  request.get({'url': url,
-               'qs': {'api-key': config.nytimes.popularKey}, json:true},
-    
-    function (err, response, articles) {
-    if (!err && response.statusCode == 200) {
-      articles.results.forEach(function(entry) {
-      cb(entry.url);
+    url = 'http://api.nytimes.com/svc/mostpopular/v2/%s/%s/%s.json';
+    url = url.replace('%s', category);
+    url = url.replace('%s', section);
+    url = url.replace('%s', days);
+    request.get({'url': url,
+                 'qs': {'api-key': config.nytimes.popularKey}, json:true},
+      
+      function (err, response, articles) {
+      if (!err && response.statusCode == 200) {
+        articles.results.forEach(function(entry) {
+        cb(entry.url);
+        });
+      }
+      else {
+        console.log('nytimes.getPopular Error: ' + err);
+      }
       });
     }
-    else {
-      console.log('nytimes.getPopular Error: ' + err);
-    }
-    });
-  }
 }
 
 /** Run this ish **/
-module.exports.search('obama', console.log);
+//module.exports.search('obama', console.log);
 
 
 /** Run this ish **/
-module.exports.getPopular('mostemailed', 'all-sections', 7, console.log);
+//module.exports.getPopular('mostemailed', 'all-sections', 7, console.log);
