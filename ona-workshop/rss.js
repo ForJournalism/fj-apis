@@ -13,17 +13,19 @@ var rss_parser = require('parse-rss'),
  * @param {function} cb - callback to print out URLS.
  */
 var parseFeed = function(rss_feed, cb) {
-    rss_parser(rss_feed, function (err, rss) {
-      if (err) {
-        console.log('rss.parseFeed: ' + url + 'Error: ' + err);
-      }
-      else {
-        rss.forEach(function(entry) {
-        cb(entry.link);
-        });
-      }
+  rss_parser(rss_feed, function (err, rss) {
+    if (err) {
+      console.log('rss.parseFeed: ' + url + 'Error: ' + err);
+    }
+    else {
+      rss.forEach(function(entry) {
+      cb(entry.link);
       });
-};
+    }
+    });
+}
+
+exports.parseFeed = parseFeed;
 
 /** Run this ish **/
 //parseFeed('http://sports.espn.go.com/espn/rss/mlb/news', console.log)

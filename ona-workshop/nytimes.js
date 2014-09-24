@@ -5,6 +5,7 @@
 var request = require('request'),
   config = require('./config.js');
 
+
 /*
  * Search for NYTimes urls.
  * http://developer.nytimes.com/docs/read/article_search_api_v2
@@ -27,11 +28,12 @@ var search = function(query, cb) {
         console.log('nytimes.search Error: ' + err);
       }
       });
-};
-
+}
+exports.search = search;
 
 /** Run this ish **/
-//search('obama', console.log);
+search('obama', console.log);
+
 
 /*
  * Get Popular NYTimes urls.
@@ -43,24 +45,25 @@ var search = function(query, cb) {
  * @param {function} cb - callback to print out URLS.
  */
 var getPopular = function(category, section, days, cb) {
-    url = 'http://api.nytimes.com/svc/mostpopular/v2/%s/%s/%s.json';
-    url = url.replace('%s', category);
-    url = url.replace('%s', section);
-    url = url.replace('%s', days);
-    request.get({'url': url,
-                 'qs': {'api-key': config.nytimes.popularKey}, json:true},
-      
-      function (err, response, articles) {
-      if (!err && response.statusCode == 200) {
-        articles.results.forEach(function(entry) {
-        cb(entry.url);
-        });
-      }
-      else {
-        console.log('nytimes.getPopular Error: ' + err);
-      }
+  url = 'http://api.nytimes.com/svc/mostpopular/v2/%s/%s/%s.json';
+  url = url.replace('%s', category);
+  url = url.replace('%s', section);
+  url = url.replace('%s', days);
+  request.get({'url': url,
+               'qs': {'api-key': config.nytimes.popularKey}, json:true},
+    
+    function (err, response, articles) {
+    if (!err && response.statusCode == 200) {
+      articles.results.forEach(function(entry) {
+      cb(entry.url);
       });
-};
+    }
+    else {
+      console.log('nytimes.getPopular Error: ' + err);
+    }
+    });
+  }
+exports.getPopular = getPopular;
 
 /** Run this ish **/
-//getPopular('mostemailed', 'all-sections', 7, console.log);
+getPopular('mostemailed', 'all-sections', 7, console.log);

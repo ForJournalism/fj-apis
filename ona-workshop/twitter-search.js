@@ -20,10 +20,7 @@ var T = new Twit({
  *
  * https://dev.twitter.com/rest/reference/get/search/tweets
  */
-
-
-
-var searchTweets= function(query, type, cb){
+var searchTweets = function(query, type, cb){
   T.get('search/tweets', { q: query, count: 20, result_type: type}, function(err, reply) {
     reply.statuses.forEach(function(d){
       if(d.entities.urls.length >0){
@@ -36,6 +33,7 @@ var searchTweets= function(query, type, cb){
   });
 }
 
+exports.searchTweets = searchTweets;
+
 /** run this **/
 searchTweets("#funny", 'popular', console.log);
-

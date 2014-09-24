@@ -11,6 +11,7 @@ var T = new Twit({
     access_token_secret: config.twitter.accessTokenSecret
 })
 
+
 /*
  * URLs from Screen Names on Twitter
  *
@@ -19,8 +20,6 @@ var T = new Twit({
  *
  * https://dev.twitter.com/rest/reference/get/statuses/user_timeline
  */
-
-
 var getUrlsFromScreenName = function(user, cb){
   T.get('statuses/user_timeline', {screen_name: user, count:5},function(err, data, response) {
     //iterate through response, look in entities for URL
@@ -35,6 +34,7 @@ var getUrlsFromScreenName = function(user, cb){
   })
 }
 
+exports.getUrlsFromScreenName = getUrlsFromScreenName;
 
 /* These are the screen names we'll check out */
 users = ['niemanlab', 'creatorsproject'];
@@ -43,5 +43,3 @@ users = ['niemanlab', 'creatorsproject'];
 users.forEach(function(u){
   getUrlsFromScreenName(u, console.log);
 });
-
-

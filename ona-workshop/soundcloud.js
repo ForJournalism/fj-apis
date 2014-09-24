@@ -17,22 +17,23 @@ var request = require('request'),
  */
 var search = function(query, fields, count, cb) {
 
-    request.get({'url': 'https://api.soundcloud.com/tracks',
-                 'qs': {'q': query, 'limit': count, 'fields': fields,
-                 'client_id': config.soundcloud.clientId}, json:true},
-      
-      function (err, response, songs) {
-      if (!err && response.statusCode == 200) {
-        console.log(songs)
-        songs.forEach(function(entry) {
-        cb(entry.permalink_url);
-        });
-      }
-      else {
-        console.log('soundcloud.search Error: ' + err);
-      }
+  request.get({'url': 'https://api.soundcloud.com/tracks',
+               'qs': {'q': query, 'limit': count, 'fields': fields,
+               'client_id': config.soundcloud.clientId}, json:true},
+    
+    function (err, response, songs) {
+    if (!err && response.statusCode == 200) {
+      songs.forEach(function(entry) {
+      cb(entry.permalink_url);
       });
-};
+    }
+    else {
+      console.log('soundcloud.search Error: ' + err);
+    }
+    });
+}
+
+exports.search = search;
 
 /** Run this ish **/
 //search('whichlight', 'username', 10, console.log);

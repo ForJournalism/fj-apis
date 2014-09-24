@@ -19,13 +19,15 @@ ig.use({ client_id: config.instagram.clientId ,
  *
  */
 
-
 var locationSearch = function(lat, lon, distance, cb){
-  ig.media_search(41.8819, 87.6278, {distance: distance},  function(err, medias, remaining, limit) {
+  ig.media_search(41.8819, 87.6278, {distance: distance},
+                  function(err, medias, remaining, limit) {
     medias.forEach(function(m){
       cb(m.link);
     });
   });
 }
+
+exports.locationSearch = locationSearch;
 
 locationSearch(41.8819, 87.6278, 1000, console.log);

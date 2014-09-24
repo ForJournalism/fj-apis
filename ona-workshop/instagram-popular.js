@@ -19,7 +19,6 @@ ig.use({ client_id: config.instagram.clientId ,
  *
  */
 
-
 var getPopular = function(cb){
   ig.media_popular(function(err, medias, remaining, limit) {
     medias.forEach(function(m){
@@ -27,5 +26,7 @@ var getPopular = function(cb){
     });
   });
 }
+
+exports.getPopular = getPopular;
 
 getPopular(console.log);

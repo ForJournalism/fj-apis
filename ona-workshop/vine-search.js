@@ -8,13 +8,12 @@ var vine = require('node-vine'),
 /*
  * Vines Tag Search
  * @param  {string} tag - tag to perform a search on
- * @param {funtion} cb - to print out URLS.
+ * @param {function} cb - to print out URLS.
  *
  * https://github.com/mstuart/node-vine
  *
  */
-
-var searchTag = function(tag,cb){
+var searchTag = function(tag,cb) {
   vine.login(config.vine.email, config.vine.password, function(err, response) {
     vine.tags(tag,function(err, response) {
       response.records.forEach(function(r){
@@ -23,5 +22,7 @@ var searchTag = function(tag,cb){
     });
   });
 }
+
+exports.searchTag = searchTag;
 
 searchTag("art",console.log);

@@ -13,7 +13,6 @@ var vine = require('node-vine'),
  * https://github.com/mstuart/node-vine
  *
  */
-
 var getPopular = function(cb){
   vine.login(config.vine.email, config.vine.password, function(err, response) {
     vine.popular(function(err, response) {
@@ -23,5 +22,7 @@ var getPopular = function(cb){
     });
   });
 }
+
+exports.getPopular = getPopular;
 
 getPopular(console.log);
