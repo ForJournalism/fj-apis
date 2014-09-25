@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Own Your Newsfeed</title>
+
+    <meta name="description" content="Designing Playerful Communication">
+    <meta name="author" content="Kawandeep Virdee, @whichlight">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+    <script>!function(a){var b="embedly-platform",c="script";if(!a.getElementById(b)){var d=a.createElement(c);d.id=b,d.src=("https:"===document.location.protocol?"https":"http")+"://cdn.embedly.com/widgets/platform.js";var e=document.getElementsByTagName(c)[0];e.parentNode.insertBefore(d,e)}}(document);</script>
+
+
+      <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+    </head>
+
+    <body>
+      <div class="reveal">
+        <div class="slides">
+
+         <!-- INTRO -->
+          <section >
+           <h2 id="outline" >APIs for Journalism:</h2>
+           <h2 id="outline" >Own Your Newsfeed</h2>
+           <br><br>
+           <h3 id="outline" >Kawandeep Virdee • @whichlight</h3>
+           <h3 id="outline" >Art Gibson • @artgibby</h3>
+           <br><br>
+           <h4>ONA Conf, 2014</h4>
+           <h4>#ownyourfeed</h4>
+         </section>
+
+
+         <section>
+            <h1>PART I: HELLO</h1>
+         </section>
+
+          <section >
+            <h2>Who's Here?</h2>
+            <p class="fragment">(Journalist, Programmer, Designer, Visionary, ...)</p>
+            <h3 class="fragment">Move around, form groups</h3>
+            <p class="fragment">Did you <a
+                href="http://blog.nodeknockout.com/post/65463770933/how-to-install-node-js-and-npm">install
+                NPM and Node?</a></p>
+         </section>
+
+         <section>
+            <h2>Who are we?</h2>
+        </section>
+
+        <section>
+          <h2>This is Art</h2>
+            <h3 class="fragment">Co-Founder of Embedly</h3>
+            <h3 class="fragment">Developer</h3>
+            <h3 class="fragment">ESPN, Freakonomics Podcast, HN,
+                Boston.com, Instagram</h3>
+        </section>
+
+        <section>
+            <h2>I'm Kawandeep</h2>
+            <h3><a href="http://hackingjournalism.com">Hacking Journalism</a></h3>
+            <h3 class="fragment">Product at Embedly</h3>
+            <h3 class="fragment">Interactive Art - <a
+                    href="http://instagram.com/p/pNgE5ypv2N/?modal=true">Playing
+                    on the internet</a></h3>
+            <h3 class="fragment">I love playing with APIs</h3>
+            <h3 class="fragment">Prosthetic Knowledge Tumblr, Creators Project,
+            Reddit Front Page, FB, Nieman Twitter</h3>
+         </section>
+
+
+         <section>
+            <h1>PART II: Problem Finding</h1>
+            <h2>Your Daily News Diet</h2>
+         </section>
+
+
+         <section>
+         <h3>With your groups discuss</h3>
+         <p>Where is your news coming from?</p>
+         <p class="fragment">How do you feel about it? (What is great, what is lacking?</p>
+         <p class="fragment">Pick three things, share with everyone</p>
+        </section>
+
+
+         <section>
+          <h3>PART III</h3>
+          <h1>WORKSHOP TIME</h1>
+          <h2>Take Back Control of your News Feed</h2>
+         </section>
+
+
+         <section>
+          <h2>WAT is API</h2>
+         </section>
+
+
+         <section>
+         <h2>?? JS</h2>
+         </section>
+
+
+         <section>
+          <h2>APIs we'll look at</h2>
+          <p>Reddit</p>
+          <p>Twitter</p>
+          <p>RSS</p>
+          <p>Instagram</p>
+          <p>Vine</p>
+          <p>YouTube</p>
+          <p>SoundCloud</p>
+          <p>NYTimes</p>
+         </section>
+
+         <section>
+          <h2>We will:</h2>
+          <h3>1. Fetch the URLs</h3>
+          <h3>2. Render previews of them, using <a
+                  href="http://embed.ly/cards">Cards</a></h3>
+         </section>
+
+
+         <section>
+           <h2>Note: Copy/paste/hack is a great way to learn</h2>
+         </section>
+
+         <section>
+           <h1>REDDIT</h1>
+          </section>
+
+         <section>
+           <h2>Find a subreddit. Add ".json" to the end</h2>
+           <p><a
+               href="http://www.reddit.com/r/mildlyinteresting">http://www.reddit.com/r/mildlyinteresting</a></p>
+           <p><a href="http://www.reddit.com/r/mildlyinteresting.json">http://www.reddit.com/r/mildlyinteresting.json</a></p>
+         </section>
+
+         <section>
+           <h2>JSON (dictionaries and arrays)</h2>
+         </section>
+
+         <section>
+           <h2>Explore it in the console</h2>
+           <h3 class="fragment">find the urls</h3>
+         </section>
+
+         <section>
+           <p>Data for listings is at data.data.children<p>
+           <p>The url for each listing is at at listing.data.url<p>
+         </section>
+
+         <section>
+           <h2>Now make it a script</h2>
+           <p>use <a href="https://github.com/mikeal/request">request</a> node module</p>
+         </section>
+
+         <section>
+           <h2>Writing to stdout</h2>
+           <h2>Writing to file</h2>
+         </section>
+
+         <section>
+           <h2>Do it for your favorite subreddit</h2>
+          </section>
+
+         <section>
+           <h1>TWITTER</h1>
+         </section>
+
+        <section>
+        <h2>Get a key <a href="https://dev.twitter.com/apps">here</a></h2>
+        <p>For this workshop you don't have to, it's in that config file</p>
+         </section>
+
+        <section>
+          <h2>Libraries make things more convenient</h2>
+          <p>Tons of twitter ones, we're using <a
+              href="https://github.com/ttezel/twit">twit</a></p>
+        </section>
+
+
+        <section>
+          <h2>Lets write a simple call using Twit</h2>
+        </section>
+
+        <section>
+          <h2>There are a couple examples</h2>
+          <p>URLs from Screen Names </p>
+          <p>URLs from Search</p>
+        </section>
+
+        <section>
+          <h2>Pick your favorite twitter users, and get a list of their
+              URLs</h2>
+        </section>
+
+        <section>
+          <h2>Do a search for URLs</h2>
+        </section>
+
+         <section>
+           <h1>RSS</h1>
+         </section>
+
+         <section>
+            <img src="media/moduleforthat.jpg">
+         </section>
+
+         <section>
+         <h2>parse-rss</h2>
+         </section>
+
+         <section>
+          <h2>What's your favorite blog?</h2>
+          <h2 class="fragment">Get the feed.</h2>
+         </section>
+
+         <section><h1>INSTAGRAM</h1></section>
+         <section> <h1>VINE</h1></section>
+         <section> <h1>YouTube</h1></section>
+         <section> <h1>SoundCloud</h1></section>
+         <section> <h1>NYTimes</h1></section>
+
+         <section> <h2>Pick one and change the API call</h2></section>
+
+         <section>
+           <h1>RENDERING URLS</h1>
+         </section>
+
+         <section>
+          <h2>Using Cards and Bootstrap</h2>
+         </section>
+
+         <section>
+          <h2>Change column sizes and layout</h2>
+         </section>
+
+        <section>
+            <h3>PART IV</h3>
+            <h1>IDEA JAM</h1>
+        </section>
+
+        <section>
+         <h3>Take what you learned and sketch out some ideas</h3>
+         <h3 class="fragment">Inspired by news feed problems</h3>
+         <h3 class="fragment">Pick your favorites, what do you like</h3>
+         <h3 class="fragment">Pick one, sketch it out</h3>
+         <h3 class="fragment">Start building out the prototype</h3>
+        </section>
+
+
+
+        </div>
+      </div>
+
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.min.js"></script>
+      <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: false,
+          progress: true,
+          history: true,
+          center: true,
+
+          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+          // Parallax scrolling
+          // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+          // parallaxBackgroundSize: '2100px 900px',
+
+          // Optional libraries used to extend on reveal.js
+          dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          ]
+        });
+
+      </script>
+      <script src="//cdn.embedly.com/widgets/platform.js"></script>
+    </body>
+</html>

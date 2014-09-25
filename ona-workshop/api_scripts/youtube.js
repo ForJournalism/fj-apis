@@ -25,7 +25,7 @@ var youtube = google.youtube('v3');
  * Search for Youtube video urls.
  *
  * @param  {string} query - search query allows boolean OR(|) and NOT(|)
- * @param  {string} order - order by parameter acceptable values: date, 
+ * @param  {string} order - order by parameter acceptable values: date,
  * rating, relevance (default), title, videoCount, viewCount.
  * @param  {int} maxResults - 0 to 50 results, Default: 5
  * @param {function} cb - callback to print out URLS.
@@ -47,4 +47,4 @@ var search = function(query, order, maxResults, cb) {
 exports.search = search;
 
 /** Run this ish **/
-//search('cats', 'date', 5, console.log);
+search('cats', 'date', 5, console.log);

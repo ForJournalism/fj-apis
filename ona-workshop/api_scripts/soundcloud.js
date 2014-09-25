@@ -10,17 +10,16 @@ var request = require('request'),
  * Search for SoundClound Tracks
  * https://developers.soundcloud.com/docs/api/guide#search
  *
- * @param  {string} query - query term to search a song.
- * @param  {string} fields - search fields values can be title, username, description.
+ * @param  {string} tag - tag term to search a song.
  * @param {string} count - count of tracks to send back up to 200.
  * @param {function} cb - callback to print out URLS.
  */
-var search = function(query, fields, count, cb) {
+var search = function(tag, count, cb) {
 
   request.get({'url': 'https://api.soundcloud.com/tracks',
-               'qs': {'q': query, 'limit': count, 'fields': fields,
+               'qs': {'tags': tag, 'limit': count,
                'client_id': config.soundcloud.clientId}, json:true},
-    
+
     function (err, response, songs) {
     if (!err && response.statusCode == 200) {
       songs.forEach(function(entry) {
@@ -36,4 +35,4 @@ var search = function(query, fields, count, cb) {
 exports.search = search;
 
 /** Run this ish **/
-//search('whichlight', 'username', 10, console.log);
+search('futurebass', 10, console.log);

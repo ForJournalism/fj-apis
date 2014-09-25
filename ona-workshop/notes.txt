@@ -1,35 +1,24 @@
 https://github.com/ForJournalism/fj-apis/wiki/APIS
-For each API write a separate node script to do the API call, process json, and
-print out a list of urls
-
-example: node twitter.js > twitter_urls.txt
-
-the app.js can read in the file to get the URLs
-
 
 Design your own newsfeed
 
 Workshop w APIs
-I. Discussion
+I. Hello
+II. Discussion
  + ?  How do you find your news now
  + How do you feel about it, are you satisfied
- + Tired of current sounrces
+ + Tired of current sources
+ + What frustrates you about current news feeds
 
-
-II. APIs and Rendering
+III. APIs and Rendering
  + Twitter API, Youtube API
  + walk through each of them, changing parameters, describing
  + rendering
 
-III. Idea Jam and Sketching
+IV. Idea Jam and Sketching
  + Take what you learned and sketch out wild ideas 10 . products inspired by
  news feed.
  + Pick your favorites, what do you like 5
  + pick one and sketch it out 20
- + Share it with everything, feedback 2 min/each
+ + Share it with everyone, feedback 3 min/each
  + Build
-
-TODO
-1. finish scripts for workshop (instagram, vine)
-2. turn it into slides, focus in on certain parts
-make slides for the workshop

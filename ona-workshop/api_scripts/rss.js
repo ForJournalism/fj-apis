@@ -2,9 +2,7 @@
  * RSS Parsing via parse-rss
  * https://github.com/nikezono/node-parse-rss
  **/
-var rss_parser = require('parse-rss'),
-    config = require('./config.js');
-
+var rss_parser = require('parse-rss');
 
 /*
  * Parse URLS from RSS Feed
@@ -29,3 +27,4 @@ exports.parseFeed = parseFeed;
 
 /** Run this ish **/
 //parseFeed('http://sports.espn.go.com/espn/rss/mlb/news', console.log)
+parseFeed('http://thecreatorsproject.vice.com/en_us/rss', console.log)
