@@ -1,6 +1,6 @@
 {
     "name": "fj-apis",
-    "description": "",
+    "description": "APIS for Journalism",
     "author": "@whichlight, @artgibby",
     "dependencies": {
         "request": "*",
@@ -9,9 +9,7 @@
         "instagram-node": "*",
         "parse-rss": "*",
         "node-vine": "*",
-        "fs": "*",
-        "request": "2.12.0",
-        "connect": "2.6.0"
+        "fs": "*"
     },
     "scripts": {
     },
