@@ -1,0 +1,22 @@
+{
+    "name": "fj-apis",
+    "description": "",
+    "author": "@whichlight, @artgibby",
+    "dependencies": {
+        "request": "*",
+        "twit": "*",
+        "googleapis": "*",
+        "instagram-node": "*",
+        "parse-rss": "*",
+        "node-vine": "*",
+        "fs": "*",
+        "request": "2.12.0",
+        "connect": "2.6.0"
+    },
+    "scripts": {
+    },
+    "version": "0.0.1-1",
+    "engines": {
+        "node": "~0.10"
+    }
+}
