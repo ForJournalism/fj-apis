@@ -4,9 +4,9 @@ exports.twitter={consumerKey:'wQetyiUi65QzfYroJlUw',
   accessTokenSecret:'YrhUgrUygflhp2Om1aJcTC4JPCsFcaeG18njd239rA1Kd'};
 
 exports.google={clientId:'947404691893-1t17e89b714idjvokt1mbqul88qtssnu.apps.googleusercontent.com',
-  clientSecret:'Yk9jg5AdAKegYMGWrpOTDo0ds',
+  clientSecret:'Yk9jg5AdAKegYMGWrpOTDo0d',
   redirectURL: 'http://localhost.com:8003/oauth2callback',
-  accessToken : 'ya29.iwDEM7l6pHmEbKBWKLJsrzazsZgT1CCE9Bk-lq0_OVrBm2WQ5PhE5MND',
+  accessToken : 'ya29.iwCAPSKCrPhJs9_nUv_UVSlHp7mnUHyx6u-wxFxPR9-VX1XLeVBtU9Nd',
   accessTokenSecret:''};
 
 exports.nytimes={searchKey:'c3a851d61a8e64298cb88a6e272a4c98:4:69828161',
